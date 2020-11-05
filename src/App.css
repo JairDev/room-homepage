@@ -1,38 +1,91 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  border: 2px solid blue;
+  min-height: 100vh;
+  background-color: rgb(170, 172, 172);
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  border: 2px solid red;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  height: 15vh;
+  padding: 0 3rem;
+  position: absolute;
 }
 
-.App-link {
-  color: #61dafb;
+.App-nav {
+  display: flex;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-content-menu {
+  border: 2px solid aqua;
+  padding-left: 3rem;
+  /* width: 100%; */
 }
+
+.App-content-menu li {
+  display: inline;
+  margin-right: 2rem;
+}
+
+.App-section-hero {
+  border: 2px solid greenyellow;
+  height: 70vh;
+
+}
+
+.App-content-hero {
+  display: flex;
+  height: 100%;
+}
+
+.App-content-hero-img {
+  border: 5px solid black;
+  min-width: 60%;
+  height: 100%;
+}
+
+.App-content-hero-text {
+  border: 5px solid rgb(197, 25, 25);
+  min-width: 40%;
+  height: 100%;
+  padding: 6rem 3rem;
+}
+
+.App-section-about {
+  border: 2px solid brown;
+  display: flex;
+  width: 100%;
+  height: 30vh;
+}
+.App-content-about {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.App-content-about-img-left {
+  border: 2px solid salmon;
+  width: 20%;
+  height: 100%;
+}
+
+.App-content-about-text {
+  border: 2px solid rgb(52, 156, 61);
+  width: 60%;
+  height: 100%;
+  padding: 4rem 2rem;
+}
+
+.App-content-about-img-right {
+  border: 2px solid rgb(200, 198, 59);
+  width: 20%;
+  height: 100%;
+}
+
