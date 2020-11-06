@@ -1,6 +1,11 @@
+import ContentDescription from 'components/ContentDescription/ContentDescription';
+import ContentImg from 'components/ContentImg/ContentImg';
+import HeroInfo from 'components/HeroInfo/HeroInfo';
+import data from "./data.json"
 import './App.css';
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,19 +23,7 @@ function App() {
         </nav>
       </header>
       <section className="App-section-hero">
-        <div className="App-content-hero">
-          <div className="App-content-hero-img">
-            <img src="" alt=""></img>
-          </div>
-          <div className="App-content-hero-text">
-            <h1>Discover innovative ways to decorate</h1>
-            <p>We provide unmatched quality, comfort, and style for property owners across the country. 
-                Our experts combine form andnfunction in bringing your vision to life. Create a room in your 
-                own style with our collection and make your property a reflection of you and what you love.
-            </p>
-            <span>Shop now</span>
-          </div>
-        </div>
+        <HeroInfo />
       </section>
 
       <section className="App-section-about">
@@ -39,7 +32,7 @@ function App() {
             <img src="" alt=""></img>
           </div>
           <div className="App-content-about-text">
-            <h1>About our furniture</h1>
+            <h2 className="title-about-text">About our furniture</h2>
             <p>Our multifunctional collection blends design and function to suit your individual taste.
               Make each room unique, or pick a cohesive theme that best express your interests and what
               inspires you. Find the furniture pieces you need, from traditional to contemporary styles
