@@ -3,6 +3,7 @@ import ContentImg from 'components/ContentImg/ContentImg';
 import HeroInfo from 'components/HeroInfo/HeroInfo';
 import data from "./data.json"
 import './App.css';
+import { useEffect, useRef } from 'react';
 
 function App() {
 
@@ -17,7 +18,6 @@ function App() {
               <li><a href="home">Shop</a></li>
               <li><a href="home">About</a></li>
               <li><a href="home">Contact</a></li>
-              
             </ul>
           </div>
         </nav>
