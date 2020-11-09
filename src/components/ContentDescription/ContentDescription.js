@@ -8,7 +8,7 @@ function ContentDescription() {
           Our experts combine form andnfunction in bringing your vision to life. Create a room in your 
           own style with our collection and make your property a reflection of you and what you love.
       </p>
-      <span>Shop now</span>
+      <span className="shop-now">Shop now</span>
     </div>
   )
 }

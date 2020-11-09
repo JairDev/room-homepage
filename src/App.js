@@ -11,13 +11,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <nav className="App-nav">
-          <div className="App-logo"><span>Logo</span></div>
+          <div className="App-logo"><span>room</span></div>
           <div className="App-content-menu">
             <ul>
-              <li><a href="home">Home</a></li>
-              <li><a href="home">Shop</a></li>
-              <li><a href="home">About</a></li>
-              <li><a href="home">Contact</a></li>
+              <li><a href="home">home</a></li>
+              <li><a href="home">shop</a></li>
+              <li><a href="home">about</a></li>
+              <li><a href="home">contact</a></li>
             </ul>
           </div>
         </nav>
@@ -29,7 +29,7 @@ function App() {
       <section className="App-section-about">
         <div className="App-content-about">
           <div className="App-content-about-img-left">
-            <img src="" alt=""></img>
+            <img src="image-about-dark.jpg" alt=""></img>
           </div>
           <div className="App-content-about-text">
             <h2 className="title-about-text">About our furniture</h2>
@@ -40,7 +40,7 @@ function App() {
             </p>
           </div>
           <div className="App-content-about-img-right">
-            <img src="" alt=""></img>
+            <img src="image-about-light.jpg" alt=""></img>
           </div>
         </div>
       </section>
