@@ -4,6 +4,7 @@ import HeroInfo from 'components/HeroInfo/HeroInfo';
 import data from "./data.json"
 import './App.css';
 import { useEffect, useRef } from 'react';
+import HomePage from 'components/HeroInfo/HeroInfo';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
         </nav>
       </header>
       <section className="App-section-hero">
-        <HeroInfo />
+        <HeroInfo/>
       </section>
 
       <section className="App-section-about">
