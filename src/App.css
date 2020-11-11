@@ -29,7 +29,9 @@ a {
   width: 100%;
   height: 15vh;
   padding: 0 3rem;
+  overflow: hidden;
   position: absolute;
+  transition: all ease-in-out.3s;
   z-index: 1000;
 }
 
@@ -41,10 +43,13 @@ a {
 .App-header .App-logo {
   font-size: 1.3rem;
   font-weight: 600;
+  transition: all ease-in-out .3s;
 }
 .App-nav {
   display: flex;
   width: 100%;
+  transition: all ease-in-out .3s;
+
 }
 
 .App-content-menu {
@@ -75,6 +80,18 @@ a {
   opacity: 1;
   transform: scaleX(1.0);
 }
+
+.content-mobile-nav {
+  position: relative;
+}
+
+.icon-close, .icon-hamburger {
+  cursor: pointer;
+  display: block;
+  opacity: 0;
+  position: absolute;
+}
+
 
 .App-section-hero {
   height: 70vh;
@@ -251,7 +268,63 @@ a {
 
 @media only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
+  .App-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 1.8rem;
+  }
+  .App-header a {
+    color: var(--Black);
+  }
+  .App-header::before {
+    content: "";
+    background-color: var(--White);
+    border-radius: 50%;
+    opacity: 1;
+    position: absolute;
+    left: 5vw;
+    width: 0px;
+    height: 0px;
+    transform-origin: top;
+    transition: all ease-in-out .3s;
+  }
 
+  .App-header.headeractive::before {
+    left: -5vw;
+    width: 400px;
+    height: 400px;
+  }
+
+  .App-logo {
+    position: absolute;
+  }
+  .App-logo.hide {
+    opacity: 0;
+  }
+  .App-nav {
+    opacity: 0;
+  }
+  .App-nav.open {
+    opacity: 1;
+  }
+
+  .content-icon-mobile-nav {
+    position: absolute;
+    left: 5vw;
+    top: 2.5rem;
+  }
+  .icon-hamburger {
+    opacity: 1;
+    z-index: 100;
+  }
+  .icon-hamburger.inactive {
+    opacity: 0;
+  }
+  .icon-close.active {
+    opacity: 1;
+    z-index: 200;
+  }
   .App-section-hero {
     height: 100vh;
   }

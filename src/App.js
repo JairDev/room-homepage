@@ -1,30 +1,13 @@
-import ContentDescription from 'components/ContentDescription/ContentDescription';
-import ContentImg from 'components/ContentImg/ContentImg';
-import HeroInfo from 'components/HeroInfo/HeroInfo';
-import data from "./data.json"
 import './App.css';
-import { useEffect, useRef } from 'react';
-import HomePage from 'components/HeroInfo/HeroInfo';
+import HomeRoom from 'components/HomeRoom/HomeRoom';
+import NavBar from 'components/NavBar/NavBar';
 
 function App() {
-
   return (
     <div className="App">
-      <header className="App-header">
-        <nav className="App-nav">
-          <div className="App-logo"><span>room</span></div>
-          <div className="App-content-menu">
-            <ul>
-              <li><a href="home">home</a></li>
-              <li><a href="home">shop</a></li>
-              <li><a href="home">about</a></li>
-              <li><a href="home">contact</a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+        <NavBar/>
       <section className="App-section-hero">
-        <HeroInfo/>
+        <HomeRoom/>
       </section>
 
       <section className="App-section-about">
