@@ -77,6 +77,6 @@ function HomeRoom() {
       </div>
     </>
   );
-}   
+}
 
 export default HomeRoom;
