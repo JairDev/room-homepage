@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## You can see it live, [here](https://coolrooms.netlify.app/).
+
 ## Room homepage App
 
 Project created for a frontendmentor challenge, where the challenge is to create this application and make it look as close to the design as possible.
