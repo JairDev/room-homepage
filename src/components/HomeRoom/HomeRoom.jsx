@@ -44,7 +44,7 @@ function HomeRoom() {
               ref={(ref) => (elRefImg.current[i] = ref)}
               className="App-content-hero-img"
             >
-              <img src={item.imgSrc} alt=""></img>
+              <img src={item.imgSrc} alt={item.title}></img>
             </div>
             <div className="overflow"></div>
             <div className="App-content-hero-text">
@@ -57,7 +57,7 @@ function HomeRoom() {
                 <div className="content-shop-now">
                   <span className="shop-now">SHOP NOW</span>
                   <span className="icon-shop-now">
-                    <img src="icon-arrow.svg" alt=""></img>
+                    <img src="icon-arrow.svg" alt="icon-arrow.svg"></img>
                   </span>
                 </div>
               </div>
@@ -67,11 +67,11 @@ function HomeRoom() {
       </div>
       <div className="parent-content-button">
         <div className="content-action-button">
-          <button className="action-button-left" onClick={handleBack}>
-            <img src="icon-angle-left.svg" alt=""></img>
+          <button aria-label="Left" className="action-button-left" onClick={handleBack}>
+            <img src="icon-angle-left.svg" alt="icon-angle-left.svg"></img>
           </button>
-          <button className="action-button-right" onClick={handleForward}>
-            <img src="icon-angle-right.svg" alt=""></img>
+          <button aria-label="Right" className="action-button-right" onClick={handleForward}>
+            <img src="icon-angle-right.svg" alt="icon-angle-right.svg"></img>
           </button>
         </div>
       </div>
