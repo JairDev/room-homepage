@@ -23,16 +23,16 @@ function HomeRoom() {
   }, []);
 
   const handleForward = () => {
-    setCount((prev) => (prev += 1));
     if (count === elRef.current.length - 1) {
-      setCount(0);
+      return;
     }
+    setCount((prev) => (prev += 1));
   };
   const handleBack = () => {
-    setCount((prev) => (prev -= 1));
     if (count === 0) {
-      setCount(elRef.current.length - 1);
+      return;
     }
+    setCount((prev) => (prev -= 1));
   };
 
   return (
@@ -67,10 +67,18 @@ function HomeRoom() {
       </div>
       <div className="parent-content-button">
         <div className="content-action-button">
-          <button aria-label="Left" className="action-button-left" onClick={handleBack}>
+          <button
+            aria-label="Left"
+            className="action-button-left"
+            onClick={handleBack}
+          >
             <img src="icon-angle-left.svg" alt="icon-angle-left.svg"></img>
           </button>
-          <button aria-label="Right" className="action-button-right" onClick={handleForward}>
+          <button
+            aria-label="Right"
+            className="action-button-right"
+            onClick={handleForward}
+          >
             <img src="icon-angle-right.svg" alt="icon-angle-right.svg"></img>
           </button>
         </div>
