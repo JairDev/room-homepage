@@ -4,6 +4,8 @@ import data from "../../data.json";
 function HomeRoom() {
   const elRef = useRef([]);
   const elRefImg = useRef([]);
+  const refLeftButton = useRef(null);
+  const refRightButton = useRef(null);
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -12,6 +14,17 @@ function HomeRoom() {
       const move = i * 100 - offSet;
       elRefImg.current[i].style = `transform: translateX(${move}%)`;
       elRef.current[i].style = `transform: translateX(${move}%)`;
+    }
+    if (count === 0) {
+      refLeftButton.current.classList.add("disable-button");
+    } else {
+      refLeftButton.current.classList.remove("disable-button");
+    }
+
+    if (count === 2) {
+      refRightButton.current.classList.add("disable-button");
+    } else {
+      refRightButton.current.classList.remove("disable-button");
     }
   }, [count]);
 
@@ -68,18 +81,28 @@ function HomeRoom() {
       <div className="parent-content-button">
         <div className="content-action-button">
           <button
+            ref={refLeftButton}
             aria-label="Left"
             className="action-button-left"
             onClick={handleBack}
           >
-            <img src="icon-angle-left.svg" alt="icon-angle-left.svg"></img>
+            <img
+              className="icon-button-left"
+              src="icon-angle-left.svg"
+              alt="icon-angle-left.svg"
+            ></img>
           </button>
           <button
+            ref={refRightButton}
             aria-label="Right"
             className="action-button-right"
             onClick={handleForward}
           >
-            <img src="icon-angle-right.svg" alt="icon-angle-right.svg"></img>
+            <img
+              className="icon-button-right"
+              src="icon-angle-right.svg"
+              alt="icon-angle-right.svg"
+            ></img>
           </button>
         </div>
       </div>

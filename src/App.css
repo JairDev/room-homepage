@@ -12,6 +12,7 @@ a {
   --Black: hsl(0, 0%, 0%);
   --White: hsl(0, 0%, 100%);
   --Very-Dark-Gray: hsl(0, 0%, 27%);
+  --Button-Disabled: hsl(0, 0%, 67%);
 }
 .App {
   min-height: 100vh;
@@ -244,6 +245,22 @@ a {
 .action-button-left:hover,
 .action-button-right:hover {
   background-color: var(--Very-Dark-Gray);
+}
+
+.action-button-left.disable-button {
+  background-color: var(--Button-Disabled);
+}
+
+.action-button-left.disable-button .icon-button-left {
+  opacity: 0.4;
+}
+
+.action-button-right.disable-button {
+  background-color: var(--Button-Disabled);
+}
+
+.action-button-right.disable-button .icon-button-right {
+  opacity: 0.4;
 }
 
 .App-content-hero {
