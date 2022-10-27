@@ -55,6 +55,7 @@ a {
 }
 
 .App-content-menu li {
+  cursor: pointer;
   display: inline;
   margin-right: 2rem;
   padding-bottom: 0.5rem;
@@ -301,7 +302,6 @@ a {
   }
   .App-nav {
     opacity: 0;
-    
   }
 
   .App-content-menu {
@@ -362,12 +362,13 @@ a {
 
   .content-action-button {
     display: flex;
-    
+
     position: absolute;
     right: 0;
     bottom: 0;
   }
-  .action-button-left, .action-button-right {
+  .action-button-left,
+  .action-button-right {
     padding: 1.1rem;
   }
 
