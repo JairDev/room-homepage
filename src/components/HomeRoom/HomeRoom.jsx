@@ -9,11 +9,18 @@ function HomeRoom() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
+    const sliceContentText = elRef.current.slice(0, count);
+    const offSet = 100 * count;
     for (let i = 0; i < data.info.length; i++) {
-      const offSet = 100 * count;
       const move = i * 100 - offSet;
-      elRefImg.current[i].style = `transform: translateX(${move}%)`;
-      elRef.current[i].style = `transform: translateX(${move}%)`;
+      elRefImg.current[i].style = `transform: translate(${move}%, 0%)`;
+      elRef.current[i].style = `transform: translate(${move}%, 0%);`;
+    }
+    if (sliceContentText) {
+      sliceContentText.map(
+        (node) =>
+          (node.style = `transform: translate(-${offSet}%, 0%); opacity: 0`)
+      );
     }
     if (count === 0) {
       refLeftButton.current.classList.add("disable-button");
@@ -30,8 +37,8 @@ function HomeRoom() {
 
   useEffect(() => {
     for (let i = 0; i < data.info.length; i++) {
-      elRefImg.current[i].style = `transform: translateX(${100 * i}%)`;
-      elRef.current[i].style = `transform: translateX(${100 * i}%)`;
+      elRefImg.current[i].style = `transform: translate(${100 * i}%, 0%)`;
+      elRef.current[i].style = `transform: translate(${100 * i}%, 0%)`;
     }
   }, []);
 
@@ -52,7 +59,7 @@ function HomeRoom() {
     <>
       <div className="App-content-hero-inline">
         {data.info.map((item, i) => (
-          <div key={item.title}>
+          <div key={item.title} className="content-hero-content">
             <div
               ref={(ref) => (elRefImg.current[i] = ref)}
               className="App-content-hero-img"

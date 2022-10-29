@@ -25,6 +25,7 @@ a {
 .App-header {
   color: hsl(0, 0%, 100%);
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 15vh;
@@ -36,8 +37,52 @@ a {
 }
 
 .App-header a {
-  color: hsl(0, 0%, 100%);
-  font-weight: 600;
+  color: var(--Black);
+}
+
+.App-header::before {
+  content: "";
+  background-color: var(--White);
+  border-radius: 50%;
+  opacity: 1;
+  position: absolute;
+  left: 3.3rem;
+  width: 0px;
+  height: 0px;
+  transform-origin: top;
+  transition: all ease-in-out 0.3s;
+}
+
+.App-header.headeractive::before {
+  left: -5vw;
+  width: 900px;
+  height: 900px;
+}
+
+.App-logo {
+  position: absolute;
+}
+
+.App-logo.hide {
+  opacity: 0;
+}
+
+.App-nav {
+  opacity: 0;
+}
+
+.App-content-menu {
+  padding: 0;
+  padding-left: 2.5rem;
+}
+.App-content-menu ul {
+  display: flex;
+}
+.App-content-menu ul li {
+  padding-bottom: 0;
+}
+.App-nav.open {
+  opacity: 1;
 }
 
 .App-header .App-logo {
@@ -45,6 +90,7 @@ a {
   font-weight: 600;
   transition: all ease-in-out 0.3s;
 }
+
 .App-nav {
   display: flex;
   width: 100%;
@@ -85,24 +131,54 @@ a {
   position: relative;
 }
 
+.content-icon-mobile-nav {
+  position: relative;
+  /* left: 5vw; */
+  /* top: 2.5rem; */
+}
+
+.icon-hamburger {
+  opacity: 1;
+  position: relative;
+  z-index: 100;
+}
+
+.icon-hamburger.inactive {
+  opacity: 0;
+}
+
+.icon-close {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  z-index: 80;
+}
+
+.icon-close.active {
+  opacity: 1;
+  z-index: 200;
+}
+
 .icon-close,
 .icon-hamburger {
   cursor: pointer;
   display: block;
-  opacity: 0;
+}
+
+.content-hero-content {
   position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .App-section-hero {
-  height: 70vh;
+  height: 100vh;
   position: relative;
 }
 
 .App-content-hero-inline {
-  display: flex;
   width: 100%;
   height: 100%;
-  position: absolute;
 }
 
 .App-content-hero-inline.active {
@@ -114,10 +190,9 @@ a {
 }
 
 .App-content-hero-img {
-  width: 60%;
-  height: 100%;
+  width: 100%;
+  height: 50vh;
   transition: all ease-in-out 0.3s;
-  position: absolute;
 }
 
 .App-content-hero-img img {
@@ -127,10 +202,7 @@ a {
 }
 
 .App-content-hero-text {
-  width: 40%;
   height: 100%;
-  position: absolute;
-  overflow: hidden;
   right: 0;
 }
 
@@ -142,6 +214,7 @@ a {
   z-index: 100;
 }
 .overflow {
+  display: none;
   background-color: white;
   position: absolute;
   top: 0;
@@ -192,15 +265,14 @@ a {
 .App-section-about {
   display: flex;
   width: 100%;
-  height: 30vh;
 }
 .App-content-about {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
 .App-content-about-img-left {
-  width: 30%;
   height: 100%;
 }
 .App-content-about-img-left img,
@@ -211,22 +283,19 @@ a {
 }
 
 .App-content-about-text {
-  width: 40%;
   height: 100%;
   padding: 3rem 2rem;
 }
 
 .App-content-about-img-right {
-  width: 30%;
   height: 100%;
 }
 
 .parent-content-button {
   position: absolute;
   z-index: 100;
-  width: 40%;
   right: 0;
-  bottom: 0;
+  bottom: 50vh;
 }
 
 .content-action-button {
@@ -282,128 +351,67 @@ a {
   opacity: 1;
 }
 
-@media only screen and (max-width: 760px),
-  (min-device-width: 768px) and (max-device-width: 1024px) {
-  .App-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+@media only screen and (min-width: 768px) {
   .App-header a {
-    color: var(--Black);
+    color: hsl(0, 0%, 100%);
+    font-weight: 600;
   }
+
   .App-header::before {
-    content: "";
-    background-color: var(--White);
-    border-radius: 50%;
-    opacity: 1;
-    position: absolute;
-    left: 5vw;
-    width: 0px;
-    height: 0px;
-    transform-origin: top;
-    transition: all ease-in-out 0.3s;
-  }
-
-  .App-header.headeractive::before {
-    left: -5vw;
-    width: 400px;
-    height: 400px;
-  }
-
-  .App-logo {
-    position: absolute;
-  }
-  .App-logo.hide {
     opacity: 0;
   }
+
   .App-nav {
-    opacity: 0;
-  }
-
-  .App-content-menu {
-    padding: 0;
-    padding-left: 2.5rem;
-  }
-  .App-content-menu ul {
-    display: flex;
-  }
-  .App-content-menu ul li {
-    padding-bottom: 0;
-  }
-  .App-nav.open {
     opacity: 1;
   }
 
   .content-icon-mobile-nav {
-    position: absolute;
-    left: 5vw;
-    top: 2.5rem;
-  }
-  .icon-hamburger {
-    opacity: 1;
-    z-index: 100;
-  }
-  .icon-hamburger.inactive {
     opacity: 0;
   }
-  .icon-close.active {
-    opacity: 1;
-    z-index: 200;
-  }
-  .App-section-hero {
-    height: 100vh;
-  }
 
-  .App-content-hero-inline {
-    display: block;
+  .App-logo {
     position: relative;
   }
+
+  .App-section-hero {
+    height: 70vh;
+  }
+
+  .content-hero-content {
+    display: flex;
+    height: 100%;
+  }
+
   .App-content-hero-img {
-    width: auto;
-    height: 50vh;
+    width: 60%;
+    height: 100%;
+    position: relative;
+    z-index: 100;
   }
 
   .App-content-hero-text {
-    width: auto;
-    height: 50vh;
-    position: absolute;
-    top: 50vh;
-  }
-
-  .parent-content-button {
-    width: auto;
-    height: 50vh;
-    top: 0;
-  }
-
-  .content-action-button {
-    display: flex;
-
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-  .action-button-left,
-  .action-button-right {
-    padding: 1.1rem;
-  }
-
-  .App-section-about {
-    height: auto;
-  }
-
-  .App-content-about {
-    display: block;
-  }
-
-  .App-content-about-img-left,
-  .App-content-about-img-right,
-  .App-content-about-text {
-    width: auto;
+    width: 40%;
+    position: relative;
+    z-index: 170;
   }
 
   .overflow {
-    display: none;
+    display: block;
+    z-index: 150;
+  }
+
+  .parent-content-button {
+    width: 40%;
+    bottom: 0;
+    z-index: 180;
+  }
+
+  .App-section-about {
+    height: 30vh;
+  }
+
+  .App-content-about {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
   }
 }
